@@ -17,13 +17,6 @@ namespace WildlifeCRUD.Controllers
         }
 
         /// <summary>
-        /// Get Number Of Records
-        /// </summary>
-        /// <returns>int</returns>
-        /// 
-        /// public IActionResult GetCount() { }
-
-        /// <summary>
         /// Get All Records From Table
         /// </summary>
         /// <returns>List<Models.Animal></returns>
@@ -54,46 +47,6 @@ namespace WildlifeCRUD.Controllers
 
             return Ok(animal);
         }
-
-        /// <summary>
-        /// INSERT Record
-        /// </summary>
-        /// <param name="Models.Animal">model</param>
-        /// <returns>?</returns>
-        /// 
-        /// public IActionResult Insert(Animal model) { }
-
-        /// <summary>
-        /// UPDATE Record
-        /// </summary>
-        /// <param name="Models.Animal">model</param>
-        /// <returns>?</returns>
-        /// 
-        /// public IActionResult Update(Animal model) { }
-
-        /// <summary>
-        /// DELETE Record
-        /// </summary>
-        /// <param name="int">animalId</param>
-        /// <returns>?</returns>
-        /// 
-        /// public IActionResult Delete(int? animalId) { }
-
-        /// <summary>
-        /// Count Records According To Condiitions
-        /// </summary>
-        /// <param name="Models.AnimalCustomCondition">customCondition</param>
-        /// <returns>?</returns>
-        /// 
-        /// public IActionResult GetCountCustomCondition(AnimalCustomCondition customCondition) { }
-
-        /// <summary>
-        /// Search Records According To Custom Condiitions
-        /// </summary>
-        /// <param name="Models.AnimalCustomCondition">customCondition</param>
-        /// <returns>?</returns>
-        /// 
-        /// public IActionResult GetListCustomCondition(AnimalCustomCondition customCondition) { }
 
         /// ----- ----- ----- ----- -----
 
