@@ -1,12 +1,37 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\nayla\\source\\repos\\WildlifeCRUD\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D033DC43-D59B-49E7-94E2-A9708476A14B}|xUnitTestProject\\xUnitTestProject.csproj|c:\\users\\nayla\\source\\repos\\wildlifecrud\\xunittestproject\\animalcontrollertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D033DC43-D59B-49E7-94E2-A9708476A14B}|xUnitTestProject\\xUnitTestProject.csproj|solutionrelative:xunittestproject\\animalcontrollertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AnimalControllerTest.cs",
+              "DocumentMoniker": "C:\\Users\\nayla\\source\\repos\\WildlifeCRUD\\xUnitTestProject\\AnimalControllerTest.cs",
+              "RelativeDocumentMoniker": "xUnitTestProject\\AnimalControllerTest.cs",
+              "ToolTip": "C:\\Users\\nayla\\source\\repos\\WildlifeCRUD\\xUnitTestProject\\AnimalControllerTest.cs",
+              "RelativeToolTip": "xUnitTestProject\\AnimalControllerTest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-31T15:21:15.523Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

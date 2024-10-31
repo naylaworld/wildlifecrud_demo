@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using WildlifeCRUD.Models;
+using Microsoft.Extensions.Configuration;
+using System.IO;
 
 namespace WildlifeCRUD
 {
@@ -12,9 +14,14 @@ namespace WildlifeCRUD
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
-            // Connect to the database.
-            builder.Services.AddDbContext<WildlifeDBContext>(options => options.UseSqlServer("Server=CrayXi-Windows\\SQLEXPRESS;Database=wildlife2;User Id=wildlife-admin;Password=master;TrustServerCertificate=True;"));
+            // Configuration reader
+            var configReader = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json")
+                .Build();
 
+            // Connect to the database.
+            builder.Services.AddDbContext<WildlifeDBContext>(options => options.UseSqlServer(configReader.GetConnectionString("DefaultConnection")));
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

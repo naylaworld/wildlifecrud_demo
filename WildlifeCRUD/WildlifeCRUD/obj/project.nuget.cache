@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "beBnh4+6FYM=",
+  "dgSpecHash": "Lm8AK/BXPig=",
   "success": true,
   "projectFilePath": "C:\\Users\\nayla\\source\\repos\\WildlifeCRUD\\WildlifeCRUD\\WildlifeCRUD.csproj",
   "expectedPackageFiles": [
@@ -17,6 +17,7 @@
     "C:\\Users\\nayla\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\8.0.10\\microsoft.entityframeworkcore.sqlserver.8.0.10.nupkg.sha512",
     "C:\\Users\\nayla\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\8.0.0\\microsoft.extensions.caching.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\nayla\\.nuget\\packages\\microsoft.extensions.caching.memory\\8.0.1\\microsoft.extensions.caching.memory.8.0.1.nupkg.sha512",
+    "C:\\Users\\nayla\\.nuget\\packages\\microsoft.extensions.configuration\\8.0.0\\microsoft.extensions.configuration.8.0.0.nupkg.sha512",
     "C:\\Users\\nayla\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\8.0.0\\microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\nayla\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\8.0.1\\microsoft.extensions.dependencyinjection.8.0.1.nupkg.sha512",
     "C:\\Users\\nayla\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.2\\microsoft.extensions.dependencyinjection.abstractions.8.0.2.nupkg.sha512",

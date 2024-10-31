@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WildlifeCRUD.Controllers;
 using WildlifeCRUD.Models;
+using Microsoft.Extensions.Configuration;
+using System.IO;
 
 namespace xUnitTestProject
 {
@@ -13,9 +15,15 @@ namespace xUnitTestProject
 
         public AnimalControllerTest()
         {
+            // Configuration reader
+            var configReader = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json")
+                .Build();
+
             // MSSQL DB Connection
             var options = new DbContextOptionsBuilder<WildlifeDBContext>()
-                .UseSqlServer("Server=CrayXi-Windows\\SQLEXPRESS;Database=wildlife2;User Id=wildlife-admin;Password=master;TrustServerCertificate=True;")
+                .UseSqlServer(configReader.GetConnectionString("DefaultConnection"))
                 .Options;
 
             _dbContext = new WildlifeDBContext(options);
