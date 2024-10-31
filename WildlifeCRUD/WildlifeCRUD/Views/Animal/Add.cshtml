@@ -1,0 +1,134 @@
+﻿@{
+    ViewData["Title"] = "Animals";
+}
+
+@model Animal
+
+<h1 class="display-4">@ViewData["Title"] / Add</h1>
+
+<div>
+    <br />
+
+    <form id="ControlForm" method="post" asp-controller="Animal" asp-action="Add">
+        <div class="mb-3">
+            <lable class="form-label">Name</lable>
+            <input class="form-control" type="text" placeholder="Add a Name" asp-for="Name" />
+        </div>
+
+        <div class="mb-3">
+            <lable class="form-label">Species</lable>
+            @Html.DropDownListFor(
+                     model => model.SpeciesId,
+                     new SelectList(ViewBag.SpeciesList, "SpeciesId", "Name"),
+                     "-- Select Species --",
+                     new { @class = "form-select" }
+                     )
+        </div>
+
+        <div class="mb-3">
+            <lable class="form-label">Date of Birth</lable>
+            <input class="form-control" type="date" placeholder="Select Date of Birth" asp-for="DateOfBirth" />
+        </div>
+
+        <div class="mb-3">
+            <lable class="form-label">Habitat</lable>
+            @Html.DropDownListFor(
+                     model => model.HabitatId,
+                     new SelectList(ViewBag.HabitatList, "HabitatId", "Name"),
+                     "-- Select Habitat --",
+                     new { @class = "form-select" }
+                     )
+        </div>
+
+        <div class="mb-3">
+            <lable class="form-label">Diet</lable>
+            @Html.DropDownListFor(
+                     model => model.DietId,
+                     new SelectList(ViewBag.DietList, "DietId", "Name"),
+                     "-- Select Diet --",
+                     new { @class = "form-select" }
+                     )
+        </div>
+
+        <div class="mb-3">
+            <lable class="form-label">Status</lable>
+            @Html.DropDownListFor(
+                     model => model.StatusId,
+                     new SelectList(ViewBag.StatusList, "StatusId", "Name"),
+                     "-- Select Status --",
+                     new { @class = "form-select" }
+                     )
+        </div>
+
+        <div class="mb-3">
+            <lable class="form-label">Arrival Date</lable>
+            <input class="form-control" type="date" placeholder="Select Arrival Date" asp-for="ArrivalDate" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">OK</button>
+        <button type="button" class="btn btn-secondary" onclick="window.history.back();">Cancel</button>
+    </form>
+</div>
+
+<script type="text/javascript">
+    $("#ControlForm").on("submit", function (e) {
+        let isValid = true;
+        let errorMessage = "";
+
+        // Validate Name
+        const name = $('#Name').val();
+        if (!name) {
+            errorMessage += "Please fill in the Name.\n";
+            isValid = false;
+        }
+
+        // Validate SpeciesId
+        const speciesId = $('#SpeciesId').val();
+        if (!speciesId) {
+            errorMessage += "Please select a Species.\n";
+            isValid = false;
+        }
+
+        // Validate DateOfBirth
+        const dateOfBirth = $('#DateOfBirth').val();
+        if (!dateOfBirth) {
+            errorMessage += "Please enter the Date of Birth.\n";
+            isValid = false;
+        }
+
+        // Validate HabitatId
+        const habitatId = $('#HabitatId').val();
+        if (!habitatId) {
+            errorMessage += "Please select a Habitat.\n";
+            isValid = false;
+        }
+
+        // Validate Diet
+        const diet = $('#DietId').val();
+        if (!diet) {
+            errorMessage += "Please specify the Diet.\n";
+            isValid = false;
+        }
+
+        // Validate StatusId
+        const statusId = $('#StatusId').val();
+        if (!statusId) {
+            errorMessage += "Please select a Status.\n";
+            isValid = false;
+        }
+
+        // Validate ArrivalDate
+        const arrivalDate = $('#ArrivalDate').val();
+        if (!arrivalDate) {
+            errorMessage += "Please enter the Arrival Date.\n";
+            isValid = false;
+        }
+
+        // If not valid, show error messages
+        if (!isValid) {
+            alert(errorMessage);
+            e.preventDefault();
+        }
+    });
+
+</script>

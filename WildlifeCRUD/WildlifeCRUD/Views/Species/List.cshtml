@@ -1,0 +1,56 @@
+﻿@{
+    ViewData["Title"] = "Species";
+}
+
+@model List<Species>
+
+<h1 class="display-4">Animal @ViewData["Title"]</h1>
+
+<div>
+    <br />
+
+    @{
+        string[] buttonClasses = { "btn-primary", "btn-secondary", "btn-success", "btn-danger", "btn-warning", "btn-info", "btn-light", "btn-dark" };
+        string[] buttonSizes = { "btn-sm", "btn-md", "btn-lg" };
+
+        foreach (var species in Model)
+        {
+            string randomButtonClass = buttonClasses[new Random().Next(buttonClasses.Length)];
+            string randomButtonSize = buttonSizes[new Random().Next(buttonSizes.Length)];
+
+            <button type="button" class="btn @randomButtonSize @randomButtonClass" data-bs-toggle="modal" data-bs-target="#speciesModal@(species.SpeciesId)" style="margin: 10px 10px 10px 10px;">
+                @species.Name
+            </button>
+        }
+
+        foreach (var species in Model)
+        {
+            <div class="modal fade" id="speciesModal@(species.SpeciesId)" tabindex="-1" aria-labelledby="speciesModal@(species.SpeciesId)Title" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="speciesModal@(species.SpeciesId)Title">@(species.SpeciesId). @(species.Name)</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>@(species.Description)</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Understood</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>
+
+<script>
+    const myModal = document.getElementById('myModal')
+    const myInput = document.getElementById('myInput')
+
+    myModal.addEventListener('shown.bs.modal', () => {
+        myInput.focus()
+    })
+</script>
